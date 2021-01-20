@@ -85,12 +85,26 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
+# enable Control-O to run command
+stty discard undef
+# enable Control-S to be sent down to applications
+bind -r '\C-s'
+stty -ixon
+
+# general alias 
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+alias pytags='/usr/local/Cellar/ctags/5.8_1/bin/ctags -R --fields=+l --languages=python --python-kinds=-iv'
+alias wget='wget --user-agent TryToStopMeFromUsingWgetNow'
+alias python3.9='/usr/local/Cellar/python@3.9/3.9.1_1/Frameworks/Python.framework/Versions/3.9/bin/python3.9'
+alias watch='watch -d -n 1' 
+e
+# coding alias
+alias ctags='ctags -R --fields=+l --languages=python --python-kinds=-iv'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

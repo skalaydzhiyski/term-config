@@ -1,3 +1,4 @@
+set ruler
 filetype plugin on
 filetype indent on
 syntax on
@@ -5,8 +6,9 @@ syntax on
 " better way to exit of Ins using Control-C
 noremap <C-c> <Esc>
 inoremap <C-c> <Esc>
-
-noremap r :redo<cr>
+" better way of saving for keyboard with heavier switches.
+inoremap <C-s> <Esc>:w<Return>
+noremap <C-s> :w<Return>
 
 " remap the :W and :Q to do the same as :w and :q respectively for writing/quitting to/from files
 command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>
@@ -43,7 +45,8 @@ syn case match
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "let g:NERDTreeDirArrows=0
@@ -57,19 +60,26 @@ inoremap <F12> <Esc>:!python main.py<Return>
 " emmet vim config
 let g:user_emmet_leader_key=','
 
-" On pressing tab, insert 2 spaces
-set expandtab           " enter spaces when tab is pressed
-set tabstop=2           " use 2 spaces to represent tab
-set softtabstop=2
-set shiftwidth=2        " number of spaces to use for auto indent
-set autoindent          " copy indent from current line when starting a new line
 
-" make backspaces more powerfull
 set backspace=indent,eol,start
+set expandtab           
+set tabstop=2          
+set softtabstop=2
+set shiftwidth=2
+set autoindent 
 aug python
-    " ftype/python.vim overwrites this
     au FileType python setlocal ts=2 sts=2 sw=2 expandtab
 aug end
+"set backspace=indent,eol,start
+"set expandtab           
+"set tabstop=4         
+"set softtabstop=4
+"set shiftwidth=4
+"set autoindent 
+"aug python
+"    au FileType python setlocal ts=4 sts=4 sw=4 expandtab
+"aug end
+
 
 set t_Co=256
 
