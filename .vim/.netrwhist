@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/cdsw/cookie-test/test-project/reports'
-let g:netrw_dirhist_2='/home/cdsw/cookie-test/test-project'
-let g:netrw_dirhist_3='/home/cdsw/cookie-test/test-project/src'
-let g:netrw_dirhist_4='/home/cdsw/cookie-test/test-project'
-let g:netrw_dirhist_5='/home/cdsw/cookie-test/test-project/src'
-let g:netrw_dirhist_6='/home/cdsw/.vim'
-let g:netrw_dirhist_7='/home/cdsw/.vim/plugged'
-let g:netrw_dirhist_8='/home/cdsw/.vim/plugged/vim-airline'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/e1211913/work/retail-edd-ta-tool/.git'

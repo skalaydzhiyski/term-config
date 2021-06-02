@@ -81,12 +81,16 @@ aug end
 "aug end
 
 
+" theme settings
 set t_Co=256
 
 " set the style for the code
-colo peachpuff
-hi Comment ctermfg=blue
-hi Search cterm=None ctermfg=black
+"colo peachpuff
+"hi Comment ctermfg=blue
+"hi Search cterm=None ctermfg=black
+set bg=dark
+colo gruvbox
+set cursorline
 
 " autocompletion
 function! InsertTabWrapper(direction)
