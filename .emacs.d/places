@@ -1,0 +1,14 @@
+;;; -*- coding: utf-8 -*-
+(("/home/darchitect/.emacs" . 2926)
+ ("/home/darchitect/work/"
+  (dired-filename . "/home/darchitect/work/haskell-trainings"))
+ ("/home/darchitect/work/haskell-trainings/"
+  (dired-filename . "/home/darchitect/work/haskell-trainings/haskell_102"))
+ ("/home/darchitect/work/haskell-trainings/haskell_102/"
+  (dired-filename . "/home/darchitect/work/haskell-trainings/haskell_102/codelab"))
+ ("/home/darchitect/work/haskell-trainings/haskell_102/codelab/"
+  (dired-filename . "/home/darchitect/work/haskell-trainings/haskell_102/codelab/Codelab.hs"))
+ ("/home/darchitect/work/haskell-trainings/haskell_102/codelab/Codelab.hs" . 10687)
+ ("/home/darchitect/.emacs.d/auto-save-list/"
+  (dired-filename . "/home/darchitect/.emacs.d/auto-save-list/.saves-2975-armitage~"))
+ ("/home/darchitect/.emacs.d/auto-save-list/.saves-2975-armitage~" . 145))
