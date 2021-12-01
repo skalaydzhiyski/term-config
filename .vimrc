@@ -3,9 +3,10 @@ filetype plugin on
 filetype indent on
 syntax on
 
-" better way to exit of Ins using Control-C
+" a better way to exit Vim insert mode 
 noremap <C-c> <Esc>
 inoremap <C-c> <Esc>
+
 " better way of saving for keyboard with heavier switches.
 inoremap <C-s> <Esc>:w<Return>
 noremap <C-s> :w<Return>
@@ -45,8 +46,8 @@ syn case match
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "let g:NERDTreeDirArrows=0
@@ -106,3 +107,15 @@ endfunction
 
 inoremap <Tab> <C-R>=InsertTabWrapper("backward")<cr>
 inoremap <S-Tab> <C-R>=InsertTabWrapper("forward")<cr>
+
+" haskell configuration
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+autocmd BufWritePre * :%s/\s\+$//e
+

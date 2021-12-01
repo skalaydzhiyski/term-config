@@ -1,0 +1,85 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/darchitect/work/cardano-node/cardano-node-chairman/" . "app/")
+ ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/" . "Api/")
+ ("/home/darchitect/work/cardano-node/cardano-api/src/" . "Cardano/")
+ ("/home/darchitect/work/cardano-node/cardano-api/" . "src/")
+ ("/home/darchitect/work/cardano-node/cardano-node/" . "app/")
+ ("/home/darchitect/" . "work/")
+ ("/home/darchitect/work/cardano-node/bench/" . "script/")
+ ("/home/darchitect/work/cardano-node/" . "cardano-api/")
+ ("/home/" . "darchitect/")
+ ("/" . "home/")
+ ("/home/darchitect/work/" . "cardano-node/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/darchitect/work/cardano-node/cardano-api/src/Cardano/Api/"
+ "/home/darchitect/"
+ "/home/darchitect/work/cardano-node/cardano-node-chairman/app/"
+ "/home/darchitect/work/cardano-node/cardano-node/app/"
+ "/home/darchitect/work/"
+ "/home/darchitect/work/cardano-node/bench/script/"
+ "/home/darchitect/work/cardano-node/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Block.hs"
+ ".emacs"
+ "new-test.hs"
+ "Address.hs"
+ "cardano-node-chairman.hs"
+ "cardano-node.hs"
+ "test.hs"
+ "todo.md"
+ "probe.sh"
+ "cabal.project"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/darchitect/work/haskell-trainings/haskell_102/codelab/" (24999 26735 576949 827000) "test_codelab" "docker-compose.yml" "Mastermind.png" "README.md" "../" "Dockerfile" "codelab" "solution" ".Codelab.hs.swp" "Makefile" "Main.hs" "Tests.hi" "Codelab.hi" "Codelab.hs" "run_test.sh" "Main.hi" "Game.o" "Solution.hi" "./" "Main.o" "Game.hi" "test_solution" "Tests.o" "Game.hs" "Codelab.o" "Solution.o" "Tests.hs" "Solution.hs" "BUILD")
+
+ ("/home/darchitect/work/" (24999 7006 685837 425000) "todo.md" "todo.md~" "../" "#todo#" "emacs-libvterm/" ".todo.md.swp" "cardano-node/" "haskell-trainings/" "./" "term-config/")
+
+ ("/home/darchitect/" (24999 10295 473819 310000) ".bash_logout" "Music/" "Pictures/" ".dmrc" ".tmux.conf" ".emacs~" ".ghc/" ".face.icon" ".xscreensaver" "../" ".zshrc" ".nix-defexpr/" ".smex-items" ".cabal/" ".bashrc~" ".viminfo" ".Xauthority" "Documents/" ".emacs.d/" ".vimrc" "Downloads/" ".bash_profile" ".pki/" ".mozilla/" "useful/" ".bashrc" ".vim/" ".wget-hsts" "Videos/" ".profile" ".ssh/" ".bashrc.original" ".xsession-errors.old" ".gnupg/" ".face" ".ICEauthority" ".config/" "./" ".cache/" "term-config/" ".bash_history" ".daedalus/" "work/" "Public/" "Desktop/" ".xsession-errors" "Templates/" ".local/" ".xmodmap" ".emacs" ".zsh_history" ".python_history")
+
+ ("/home/darchitect/work/haskell-trainings/" (24994 4627 287229 866000) "README.md" "../" ".gitignore" ".git/" "CONTRIBUTING" "./" "haskell_101/" "haskell_102/" "LICENSE")
+
+ ("/home/darchitect/work/haskell-trainings/haskell_102/" (24994 4629 723229 828000) "../" "codelab/" "slides/" "./")
+
+ ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/Api/" (24988 441 480689 391000) "Fees.hs" "Utils.hs" "Byron.hs" "SpecialByron.hs" "NetworkId.hs" "SerialiseJSON.hs" "Address.hs" "TxSubmit/" "TxInMode.hs" "LedgerEvent.hs" "../" "Script.hs" "SerialiseRaw.hs" "Crypto/" "Modes.hs" "Error.hs" "KeysPraos.hs" "Shelley/" "Key.hs" "ScriptData.hs" "Orphans.hs" "TxMetadata.hs" "Hash.hs" "Certificate.hs" "ValueParser.hs" "HasTypeProxy.hs" "SerialiseBech32.hs" "Shelley.hs" "ProtocolParameters.hs" "Protocol/" "Value.hs" "Json.hs" "KeysByron.hs" "SerialiseUsing.hs" "./" "IPC/" "TxBody.hs" "Tx.hs" "SerialiseCBOR.hs" "GenesisParameters.hs" "Block.hs" "KeysShelley.hs" "Eras.hs" "IPC.hs" "ChainSync/" "Query.hs" "LedgerState.hs" "OperationalCertificate.hs" "SerialiseTextEnvelope.hs" "StakePoolMetadata.hs")
+
+ ("/home/darchitect/work/cardano-node/cardano-node-chairman/app/" (24986 45463 966027 775000) "../" "cardano-node-chairman.hs" "./" "Cardano/")
+
+ ("/home/darchitect/work/cardano-node/cardano-node-chairman/" (24984 13666 708265 68000) "testnet/" "../" "app/" "NOTICE" "cardano-node-chairman.cabal" "test/" "./" "LICENSE")
+
+ ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/" (24984 13666 688265 67000) "Api.hs" "../" "Api/" "./")
+
+ ("/home/darchitect/work/cardano-node/cardano-api/src/" (24984 13666 688265 67000) "../" "./" "Cardano/")
+
+ ("/home/darchitect/work/cardano-node/cardano-api/" (24984 13666 696265 68000) "README.md" "../" "NOTICE" "test/" "cardano-api.cabal" "ChangeLog.md" "./" "gen/" "src/" "LICENSE")
+
+ ("/home/darchitect/work/cardano-node/cardano-node/app/" (24987 65429 144697 919000) "../" "cardano-node.hs" "./")
+
+ ("/home/darchitect/work/cardano-node/scripts/" (24984 13666 796265 72000) "buildkite/" "README.md" "haddocs.sh" "testnet/" "protocol-params.json" "../" "shelley-from-scratch/" "plutus/" "prolog" "lite/" "byron-to-shelley/" "gen-cabal-nosystemd.sh" "bin-path.sh" "./" "test-stake-cred-script/" "benchmarking/" "project.sh" "reconfigure-hlint.sh" "byron-to-alonzo/")
+
+ ("/home/darchitect/work/cardano-node/bench/script/" (24984 13666 684265 67000) "test-plutus-to-file.json" "../" "sum1ToN.plutus" "test-plutus.json" "test-large.json" "probe.sh" "./")
+
+ ("/home/darchitect/work/cardano-node/bench/" (24984 13666 684265 67000) "locli/" "../" "script/" "tx-generator-config-base.json" "./" "tx-generator/" "cardano-topology/")
+
+ ("/home/" (24983 53492 266399 253000) "darchitect/" "../" "./")
+
+ ("/home/darchitect/work/cardano-node/cardano-node/" (24984 13666 716265 69000) "README.md" "../" "app/" "NOTICE" "test/" "ChangeLog.md" "./" "cardano-node.cabal" "src/" "LICENSE")
+
+ ("/home/darchitect/work/cardano-node/" (24987 44802 281018 742000) "overlay.nix" "trace-resources/" ".hlint.template.yaml" "cardano-client-demo/" "docker-compose.yml" "STYLE.md" ".gitattributes" "bench/" "cardano-node-chairman/" "flake.lock" ".gitmodules" "cardano-api/" "../" "cardano-submit-api/" "README.rst" "shell.nix" "nix/" ".readthedocs.yml" "plutus-example/" ".buildkite/" "cardano-testnet/" "ci/" ".stylish-haskell.yaml" ".gitignore" "Makefile" "cabal.project" ".git/" "NOTICE" "SECURITY.md" ".github/" "CODEOWNERS" "cardano-cli/" "cardano-node/" "release.nix" "doc/" "trace-dispatcher/" "trace-forward/" "ci-shell" "./" "Setup.hs" "configuration/" "default.nix" "flake.nix" "bors.toml" "scripts/" "LICENSE" "supported-systems.nix")
+
+ ("/home/darchitect/Downloads/" (24987 42713 265051 234000) ".BUILDINFO" "../" ".MTREE" ".PKGINFO" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
