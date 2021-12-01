@@ -1,0 +1,2 @@
+alias lls hto $*
+alias l lls -la $*
