@@ -1,6 +1,9 @@
 (require 'package)
 (require 'use-package)
 
+;; set transparency
+(set-frame-parameter (selected-frame) 'alpha '(90 90))
+(add-to-list 'default-frame-alist '(alpha 90 90))
 
 (package-initialize)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
@@ -17,6 +20,12 @@
 (column-number-mode 1)
 (display-battery-mode t)
 (show-paren-mode t)
+;; tabbar mode
+(tabbar-mode 1)
+(set-face-background 'tabbar-default "#313131")
+(set-face-background 'tabbar-button "#000000")
+(set-face-background 'tabbar-selected "#000000")
+(set-face-foreground 'tabbar-selected "#99bbdd")
 
 (global-hl-line-mode t) ;; This highlights the current line in the buffer
 (global-set-key (kbd "M-x") 'smex)
@@ -36,15 +45,15 @@
 ;;(set-face-background 'hl-line "#323232")
 
 ;; this is the default hl line for the default-theme :)
-;;(set-face-background 'hl-line "#181818")
+(set-face-background 'hl-line "#212125")
 
 
 ;; mode-line customisations:
 ;; '(mode-line-inactive ((t (:background "#a19857" :foreground "#062329" :box nil :weight ultra-bold)))) ;; add below for setting up inactive modeline background color for naysayer theme
 
 ;; default-theme
-;;(set-background-color "#000007")
-;;(set-foreground-color "white")
+(set-background-color "#000007")
+(set-foreground-color "white")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -166,7 +175,6 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes '(naysayer))
  '(custom-safe-themes
    '("8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" "e01d36b3ca7991d21fba7f2708f0bfb587b61654898bf3dd92fb11c9fbf5a649" "2d5a7ffd0e838706416f454483c6cc8520175dfd461897460863bec7c6d2902b" "332a945a80a202248b21963da38e842aa35b09d1b43c26144bd517943855fe8a" "30efcf226fdfb581f45ebbe4a8520b721637583e4231a289bc1921fa0fba707c" "70907b7e68c6fda0f74c98350d107c38271485dfdc5d834669ab94c52fdd9d6c" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "2ce76d65a813fae8cfee5c207f46f2a256bac69dacbb096051a7a8651aa252b0" "0ad9efaf2cb57180461c0cc454aca921927605b4a1d78ad36625ba83b4a412e9" "05793a3d1d18619a2d72af300892a818d22757ed35c8d32c1725263d483604ff" "e081d167861aa1af9e423a10b00c560b1c18ab8f3627dfbe35ff4455bd993d36" "6dc02f2784b4a49dd5a0e0fd9910ffd28bb03cfebb127a64f9c575d8e3651440" "249e100de137f516d56bcf2e98c1e3f9e1e8a6dce50726c974fa6838fbfcec6b" "06ed754b259cb54c30c658502f843937ff19f8b53597ac28577ec33bb084fa52" "e266d44fa3b75406394b979a3addc9b7f202348099cfde69e74ee6432f781336" "e8567ee21a39c68dbf20e40d29a0f6c1c05681935a41e206f142ab83126153ca" "c95813797eb70f520f9245b349ff087600e2bd211a681c7a5602d039c91a6428" "11cc65061e0a5410d6489af42f1d0f0478dbd181a9660f81a692ddc5f948bf34" "9cd57dd6d61cdf4f6aef3102c4cc2cfc04f5884d4f40b2c90a866c9b6267f2b3" "d9a28a009cda74d1d53b1fbd050f31af7a1a105aa2d53738e9aa2515908cac4c" "f00a605fb19cb258ad7e0d99c007f226f24d767d01bf31f3828ce6688cbdeb22" "6128465c3d56c2630732d98a3d1c2438c76a2f296f3c795ebda534d62bb8a0e3" "d516f1e3e5504c26b1123caa311476dc66d26d379539d12f9f4ed51f10629df3" "3c7a784b90f7abebb213869a21e84da462c26a1fda7e5bd0ffebf6ba12dbd041" "9a3ff7953afc7fc756c8f993e1acdf6f9e80c1881d14dbdffce7829db62d2c3e" "0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" "3c68f48ea735abe65899f489271d11cbebbe87da7483acf9935ea4502efd0117" "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739" "748d024b0d016cc0e7a4326577ce12c6bc918b273acecd355548d7477ad2fc5c" "97f8522ab2c0ff08dd511ff74ef3af612adc03e450dbd6d724c973f1511939ae" default))
  '(display-battery-mode t)
