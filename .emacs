@@ -51,9 +51,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 97 :width normal))))
- '(mode-line ((t (:box nil :weight ultra-bold)))) 
- '(mode-line-inactive ((t (:background "#a19857" :foreground "#062329" :box nil :weight ultra-bold))))) ;; add below for setting up inactive modeline background color for naysayer theme
+ '(default ((t (:family "Ubuntu Mono" :foundry "DAMA" :slant normal :weight normal :height 112 :width normal))))
+ '(mode-line ((t (:background "#404044" :foreground "#d9d9d9" :box nil :weight ultra-bold))))
+ '(mode-line-inactive ((t (:background "#252529" :foreground "#d5d5d5" :box nil :weight ultra-bold)))))
 
 ;; disable highlight line and line numbers in eshell and haskell-interactive
 (add-hook 'eshell-mode-hook (lambda ()
@@ -97,6 +97,7 @@
 (setq evil-normal-state-cursor 'box)
 (setq evil-insert-state-cursor 'box)
 (setq evil-emacs-state-cursor  'hbar)
+(evil-set-initial-state 'haskell-interactive-mode 'insert)
 
 
 ;;(use-package beacon ;; This applies a beacon effect to the highlighted line
