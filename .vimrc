@@ -3,7 +3,15 @@ filetype plugin on
 filetype indent on
 syntax on
 
-" a better way to exit Vim insert mode 
+" Haskell save only (ghcid update)
+inoremap <F8> <Esc>:w<Return>
+noremap <F8> <Esc>:w<Return>
+" Haskell save and update REPL
+inoremap <F9> <Esc>:w<Return>:SendKeys ":r Enter"<Return>
+noremap <F9> <Esc>:w<Return>:SendKeys ":r Enter"<Return>
+" --------------------------
+
+" a better way to exit Vim insert mode
 noremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 
@@ -48,6 +56,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'slarwise/vim-tmux-send'
 call plug#end()
 
 "let g:NERDTreeDirArrows=0
@@ -63,20 +72,20 @@ let g:user_emmet_leader_key=','
 
 
 set backspace=indent,eol,start
-set expandtab           
-set tabstop=2          
+set expandtab
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set autoindent 
+set autoindent
 aug python
     au FileType python setlocal ts=2 sts=2 sw=2 expandtab
 aug end
 "set backspace=indent,eol,start
-"set expandtab           
-"set tabstop=4         
+"set expandtab
+"set tabstop=4
 "set softtabstop=4
 "set shiftwidth=4
-"set autoindent 
+"set autoindent
 "aug python
 "    au FileType python setlocal ts=4 sts=4 sw=4 expandtab
 "aug end
@@ -87,8 +96,9 @@ set t_Co=256
 
 " set the style for the code
 "colo peachpuff
-"hi Comment ctermfg=blue
-"hi Search cterm=None ctermfg=black
+"i Comment ctermfg=blue
+"i Search cterm=None ctermfg=black
+"
 set bg=dark
 colo gruvbox
 set cursorline
