@@ -93,7 +93,7 @@ stty discard undef
 bind -r '\C-s'
 stty -ixon
 
-# general alias 
+# general alias
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -101,8 +101,7 @@ alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias pytags='/usr/local/Cellar/ctags/5.8_1/bin/ctags -R --fields=+l --languages=python --python-kinds=-iv'
 alias wget='wget --user-agent TryToStopMeFromUsingWgetNow'
 alias python3.9='/usr/local/Cellar/python@3.9/3.9.1_1/Frameworks/Python.framework/Versions/3.9/bin/python3.9'
-alias watch='watch -d -n 1' 
-e
+alias watch='watch -d -n 1'
 # coding alias
 alias ctags='ctags -R --fields=+l --languages=python --python-kinds=-iv'
 
