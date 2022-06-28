@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 
-plutus_dir = '/Users/darchitect/work/ppp'
+plutus_dir = os.environ['HOME']
 dirs = [
     f'{plutus_dir}/plutus-apps/plutus-contract/',
     f'{plutus_dir}/plutus-apps/plutus-ledger/',
