@@ -1,2 +1,0 @@
-;;; Generated package description from theme-looper-2.7.0/theme-looper.el  -*- no-byte-compile: t -*-
-(define-package "theme-looper" "2.7.0" "Loop thru the available color-themes" '((emacs "24") (cl-lib "0.5")) :commit "6bc170097f1dfb7ea4db91544c5ab653279e15cd" :authors '(("Mohammed Ismail Ansari" . "team.terminal@gmail.com")) :maintainer '("Mohammed Ismail Ansari" . "team.terminal@gmail.com") :keywords '("convenience" "color-themes") :url "http://ismail.teamfluxion.com")

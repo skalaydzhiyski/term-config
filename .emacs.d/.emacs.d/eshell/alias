@@ -1,3 +1,0 @@
-alias hto  $*
-alias l lls -la $*
-alias lls hto $*

@@ -2,82 +2,48 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/darchitect/work/cardano-node/cardano-node-chairman/" . "app/")
- ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/" . "Api/")
- ("/home/darchitect/work/cardano-node/cardano-api/src/" . "Cardano/")
- ("/home/darchitect/work/cardano-node/cardano-api/" . "src/")
- ("/home/darchitect/work/cardano-node/cardano-node/" . "app/")
- ("/home/darchitect/" . "work/")
- ("/home/darchitect/work/cardano-node/bench/" . "script/")
- ("/home/darchitect/work/cardano-node/" . "cardano-api/")
+ ("/home/darchitect/work/algo-design-manual/" . "archive/")
  ("/home/" . "darchitect/")
- ("/" . "home/")
- ("/home/darchitect/work/" . "cardano-node/")
+ ("/home/darchitect/work/jstreet/learn/" . "bin/")
+ ("/home/darchitect/work/jstreet/" . "learn/")
+ ("/home/darchitect/work/" . "algo-design-manual/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/darchitect/work/algo-design-manual/archive/"
+ "/home/darchitect/work/algo-design-manual/"
  "/home/darchitect/"
- "/home/darchitect/work/cardano-node/cardano-api/src/Cardano/Api/"
- "/home/darchitect/work/cardano-node/cardano-node-chairman/app/"
- "/home/darchitect/work/cardano-node/cardano-node/app/"
- "/home/darchitect/work/"
- "/home/darchitect/work/cardano-node/bench/script/"
- "/home/darchitect/work/cardano-node/"
+ "/home/darchitect/work/jstreet/learn/bin/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "fast_divide_no_operators.py"
+ "solve.py"
  ".emacs"
- "new-test.hs"
- "Address.hs"
- "cardano-node-chairman.hs"
- "cardano-node.hs"
- "test.hs"
- "todo.md"
- "probe.sh"
- "cabal.project"
+ "first_hour_with_ocaml.ml"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/darchitect/" (24994 28856 670853 11000) ".bash_logout" "Music/" "Pictures/" ".dmrc" ".tmux.conf" ".emacs~" ".ghc/" ".face.icon" ".xscreensaver" "../" ".zshrc" ".smex-items" ".cabal/" ".bashrc~" "new-test.hs~" ".viminfo" ".Xauthority" "Documents/" ".emacs.d/" ".vimrc" "Downloads/" ".bash_profile" ".mozilla/" ".bashrc" ".vim/" ".stack/" ".wget-hsts" "#*haskell*#" "Videos/" ".emacs.swp" ".profile" ".ssh/" ".bashrc.original" ".xsession-errors.old" ".gnupg/" ".face" ".ICEauthority" ".config/" "./" ".cache/" "term-config/" ".bash_history" "work/" "Public/" "Desktop/" ".xsession-errors" "Templates/" ".local/" ".xmodmap" "TAGS" ".emacs" "new-test.hs" ".zsh_history" ".python_history")
+ ("/home/darchitect/work/jstreet/async/" (25345 4519 60159 276000) "async.opam" "../" "async_quickcheck/" "CHANGES.md" "src/" "bench/" "dune-project" "example/" "lock_file_async/" "LICENSE.md" "./" "persistent_connection/" "README.md" "async_command/" ".gitignore" "async_rpc/" "CONTRIBUTING.md" "log_extended/" ".git/" "unpack_sequence/" "Makefile")
 
- ("/home/darchitect/work/" (24994 17564 755028 641000) "todo.md" "todo.md~" "temp/" "../" "#todo#" "emacs-libvterm/" "haskell-language-server/" "cardano-node/" "haskell-trainings/" "./")
+ ("/home/darchitect/" (25376 32995 588916 545000) ".npm/" "Jts/" ".mozilla/" ".face" ".ICEauthority" ".msf4/" ".viminfo" ".zshrc" "../" ".profile" ".v8flags.9.4.146.24-node.21.5b33db4384b1a22a293fe8615af9bd67.json" ".python_history" "one" ".vagrant.d/" ".lesshst" ".bash_logout" ".ghc/" ".gnupg/" ".hwid" "install-nix.sh" ".bash_history" "./" ".xsession-errors.old" ".emacs.d/" ".jupyter/" "useful/" ".dbus/" "miniconda3/" ".nix-profile/" ".gnome/" "Pictures/" "work/" ".conda/" ".vim/" "Music/" ".nix-defexpr/" "Templates/" ".utoprc" ".emacs~" ".wget-hsts" ".vimrc" ".sudo_as_admin_successful" ".config/" ".xsession-errors" ".cache/" "todo.md" ".dmrc" ".vagrant/" "Videos/" ".bashrc" ".bashrc.original" ".xmodmap" ".stack/" ".tmux.conf" ".cabal/" "Downloads/" ".ghcup/" ".Xauthority" ".face.icon" ".ipython/" ".zsh_history" ".java/" ".gitconfig" "Desktop/" ".emacs" "make_plutus_tags.py" ".ghci" "VirtualBox VMs/" ".bash_profile" ".opencog/" "Documents/" ".local/" "term-config/" "run_solution.py" ".nix-channels" ".utop-history" ".ssh/" "Public/" ".opam/" ".pki/" ".ocamlinit")
 
- ("/home/darchitect/work/haskell-trainings/" (24994 4627 287229 866000) "README.md" "../" ".gitignore" ".git/" "CONTRIBUTING" "./" "haskell_101/" "haskell_102/" "LICENSE")
+ ("/home/darchitect/work/algo-design-manual/" (25376 32969 688374 808000) "notes" "../" "./" "run_solution.sh" ".gitignore" "solve.py" "archive/" ".git/")
 
- ("/home/darchitect/work/haskell-trainings/haskell_102/" (24994 4629 723229 828000) "../" "codelab/" "slides/" "./")
+ ("/home/darchitect/work/algo-design-manual/archive/" (25373 6936 30031 465000) "fast_divide_no_operators.py" "../" "./" "cache_with_queue.py" "graph_search_iter.py")
 
- ("/home/darchitect/work/haskell-trainings/haskell_102/codelab/" (24994 27818 514869 158000) "test_codelab" "docker-compose.yml" "Mastermind.png" "README.md" "../" "Dockerfile" "codelab" "solution" "Makefile" "Main.hs" "Tests.hi" "Codelab.hi" "Codelab.hs" "Main.hi" "Game.o" "Solution.hi" "./" "Main.o" "Game.hi" "test_solution" "Tests.o" "Game.hs" "Codelab.o" "Solution.o" "Tests.hs" "Solution.hs" "BUILD")
+ ("/home/" (25252 33733 121181 12000) "../" "./" "darchitect/")
 
- ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/Api/" (24988 441 480689 391000) "Fees.hs" "Utils.hs" "Byron.hs" "SpecialByron.hs" "NetworkId.hs" "SerialiseJSON.hs" "Address.hs" "TxSubmit/" "TxInMode.hs" "LedgerEvent.hs" "../" "Script.hs" "SerialiseRaw.hs" "Crypto/" "Modes.hs" "Error.hs" "KeysPraos.hs" "Shelley/" "Key.hs" "ScriptData.hs" "Orphans.hs" "TxMetadata.hs" "Hash.hs" "Certificate.hs" "ValueParser.hs" "HasTypeProxy.hs" "SerialiseBech32.hs" "Shelley.hs" "ProtocolParameters.hs" "Protocol/" "Value.hs" "Json.hs" "KeysByron.hs" "SerialiseUsing.hs" "./" "IPC/" "TxBody.hs" "Tx.hs" "SerialiseCBOR.hs" "GenesisParameters.hs" "Block.hs" "KeysShelley.hs" "Eras.hs" "IPC.hs" "ChainSync/" "Query.hs" "LedgerState.hs" "OperationalCertificate.hs" "SerialiseTextEnvelope.hs" "StakePoolMetadata.hs")
+ ("/home/darchitect/work/jstreet/learn/bin/" (25376 31334 982422 120000) "../" "main.ml" "./" "dune" "#first_hour_with_ocaml.ml#" "first_hour_with_ocaml.ml")
 
- ("/home/darchitect/work/cardano-node/cardano-node-chairman/app/" (24986 45463 966027 775000) "../" "cardano-node-chairman.hs" "./" "Cardano/")
+ ("/home/darchitect/work/jstreet/learn/" (25374 14201 259917 389000) "../" "compilation-test/" "dune-project" "./" "bin/" "test/" ".gitignore" "_build/" ".git/" "learn.opam" "lib/")
 
- ("/home/darchitect/work/cardano-node/cardano-node-chairman/" (24984 13666 708265 68000) "testnet/" "../" "app/" "NOTICE" "cardano-node-chairman.cabal" "test/" "./" "LICENSE")
+ ("/home/darchitect/work/jstreet/" (25344 57694 947832 354000) "async/" "../" "./" "learn/")
 
- ("/home/darchitect/work/cardano-node/cardano-api/src/Cardano/" (24984 13666 688265 67000) "Api.hs" "../" "Api/" "./")
-
- ("/home/darchitect/work/cardano-node/cardano-api/src/" (24984 13666 688265 67000) "../" "./" "Cardano/")
-
- ("/home/darchitect/work/cardano-node/cardano-api/" (24984 13666 696265 68000) "README.md" "../" "NOTICE" "test/" "cardano-api.cabal" "ChangeLog.md" "./" "gen/" "src/" "LICENSE")
-
- ("/home/darchitect/work/cardano-node/cardano-node/app/" (24987 65429 144697 919000) "../" "cardano-node.hs" "./")
-
- ("/home/darchitect/work/cardano-node/scripts/" (24984 13666 796265 72000) "buildkite/" "README.md" "haddocs.sh" "testnet/" "protocol-params.json" "../" "shelley-from-scratch/" "plutus/" "prolog" "lite/" "byron-to-shelley/" "gen-cabal-nosystemd.sh" "bin-path.sh" "./" "test-stake-cred-script/" "benchmarking/" "project.sh" "reconfigure-hlint.sh" "byron-to-alonzo/")
-
- ("/home/darchitect/work/cardano-node/bench/script/" (24984 13666 684265 67000) "test-plutus-to-file.json" "../" "sum1ToN.plutus" "test-plutus.json" "test-large.json" "probe.sh" "./")
-
- ("/home/darchitect/work/cardano-node/bench/" (24984 13666 684265 67000) "locli/" "../" "script/" "tx-generator-config-base.json" "./" "tx-generator/" "cardano-topology/")
-
- ("/home/" (24983 53492 266399 253000) "darchitect/" "../" "./")
-
- ("/home/darchitect/work/cardano-node/cardano-node/" (24984 13666 716265 69000) "README.md" "../" "app/" "NOTICE" "test/" "ChangeLog.md" "./" "cardano-node.cabal" "src/" "LICENSE")
-
- ("/home/darchitect/work/cardano-node/" (24987 44802 281018 742000) "overlay.nix" "trace-resources/" ".hlint.template.yaml" "cardano-client-demo/" "docker-compose.yml" "STYLE.md" ".gitattributes" "bench/" "cardano-node-chairman/" "flake.lock" ".gitmodules" "cardano-api/" "../" "cardano-submit-api/" "README.rst" "shell.nix" "nix/" ".readthedocs.yml" "plutus-example/" ".buildkite/" "cardano-testnet/" "ci/" ".stylish-haskell.yaml" ".gitignore" "Makefile" "cabal.project" ".git/" "NOTICE" "SECURITY.md" ".github/" "CODEOWNERS" "cardano-cli/" "cardano-node/" "release.nix" "doc/" "trace-dispatcher/" "trace-forward/" "ci-shell" "./" "Setup.hs" "configuration/" "default.nix" "flake.nix" "bors.toml" "scripts/" "LICENSE" "supported-systems.nix")
-
- ("/home/darchitect/Downloads/" (24987 42713 265051 234000) ".BUILDINFO" "../" ".MTREE" ".PKGINFO" "./")
+ ("/home/darchitect/work/" (25372 28121 592588 783000) "trading/" "../" "cardano-node/" "haskell/" "./" "maths/" "jstreet/" "secp256k1/" "cardano-node-operate/" "vagrant_project/" "opencog_repos/" "algo-design-manual/" "cd/" "libsodium/" "ppp/")
 )
 
 ;; ----- ido-unc-hosts-cache -----
