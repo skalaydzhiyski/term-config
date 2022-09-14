@@ -61,30 +61,62 @@
 ;; Global Key Settings
 (global-set-key (kbd "C-c") nil) ;; TODO: remove me if you notice any weird behaviour related to Ctrl
 (global-set-key (kbd "C-x f") 'ido-find-file)
+;; Evil-Mode word in vim is not capturing underscores (the following entries are the fix
+(defadvice evil-inner-word (around underscore-as-word1 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+(defadvice evil-forward-word-begin (around underscore-as-word2 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+(defadvice evil-forward-word-end (around underscore-as-word3 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+(defadvice evil-backward-word-end (around underscore-as-word4 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+(defadvice evil-backward-word-end (around underscore-as-word5 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+(defadvice evil-a-word (around underscore-as-word6 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
 
 ;; ------------------ USE-PACKAGE MODULES -----------------------
 
 ;; Major mode for OCaml programming
-(use-package tuareg
-  :ensure t
-  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
+;;(use-package tuareg
+;;  :ensure t
+;;  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
 
 ;; Major mode for editing Dune project files
 (use-package dune
   :ensure t)
 
 ;; Merlin provides advanced IDE features
-(use-package merlin
-  :ensure t
-  :config
-  (add-hook 'tuareg-mode-hook #'merlin-mode)
-  (add-hook 'merlin-mode-hook #'company-mode)
-  ;; we're using flycheck instead
-  (setq merlin-error-after-save nil))
+;;(use-package merlin
+;;  :ensure t
+;;  :config
+;;  (add-hook 'tuareg-mode-hook #'merlin-mode)
+;;  (add-hook 'merlin-mode-hook #'company-mode)
+;;  ;; we're using flycheck instead
+;;  (setq merlin-error-after-save nil)
+;;  (setq merlin-command "<PREFIX>/bin/ocamlmerlin"))
 
-(use-package merlin-eldoc
-  :ensure t
-  :hook ((tuareg-mode) . merlin-eldoc-setup))
+;;(use-package merlin-eldoc
+;;  :ensure t
+;;  :hook ((tuareg-mode) . merlin-eldoc-setup))
 
 ;; This uses Merlin internally
 (use-package flycheck-ocaml
@@ -107,16 +139,27 @@
   (undo-tree-mode 1))
 (define-key evil-normal-state-map (kbd "u") 'undo-tree-undo)
 (define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
+
+;; --------------- GENERATED CONFIGS ------------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(idomenu flycheck-ocaml merlin-eldoc merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+   '(tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(merlin-eldoc-occurrences-face ((t (:background "dim gray" :inverse-video t)))))
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
+;; ------------------- EXTRA ---------------------------------
+
+(add-hook 'tuareg-mode-hook 'merlin-eldoc-setup)
+
