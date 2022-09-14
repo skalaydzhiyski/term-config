@@ -29,15 +29,19 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(global-linum-mode 1)
-(setq linum-format "%d ")
-;;(global-line-number-mode 1)
+;; ------------------ GLOBAL CONFIG ----------------------------
 
-;; Evil
+(global-undo-tree-mode 1)
+(global-nlinum-mode 1)
+(setq nlinum-format "%d ")
+(electric-indent-mode nil)
+
+;; ------------------- REQURE PACKAGES -------------------------
+
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode t)
-
+(setq evil-want-fine-undo 'fine)
 (require 'evil-leader)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
@@ -53,38 +57,14 @@
     (evil-end-of-line)    ; to end of line (including newline)
     (evil-backward-char)  ; back to second to last visible character (weird)
     (evil-forward-char))) ; forward to last visible character
+(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+;; Global Key Settings
+(global-set-key (kbd "C-c") nil) ;; TODO: remove me if you notice any weird behaviour related to Ctrl
+(global-set-key (kbd "C-x f") 'ido-find-file)
 
+;; ------------------ USE-PACKAGE MODULES -----------------------
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(markdown-preview-mode markdown-mode python-mode idomenu fzf flycheck-ocaml merlin-eldoc dune tuareg evil-visual-mark-mode evil-leader evil cmake-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; ---------- OCAML --------------
-;; Tuareg
-(load "/home/darchitect/.opam/4.14.0/share/emacs/site-lisp/tuareg-site-file")
-
-(let ((opam-share (ignore-errors (car (process-lines "opam" "var" "share")))))
-    (when (and opam-share (file-directory-p opam-share))
-    ;; Register Merlin
-    (add-to-list 'load-path (expand-file-name "emacs/site-lisp" opam-share))
-    (autoload 'merlin-mode "merlin" nil t nil)
-    ;; Automatically start it in OCaml buffers
-    (add-hook 'tuareg-mode-hook 'merlin-mode t)
-    (add-hook 'caml-mode-hook 'merlin-mode t)
-    ;; Use opam switch to lookup ocamlmerlin binary
-    (setq merlin-command 'opam)))
-
-;; Tuareg
+;; Major mode for OCaml programming
 (use-package tuareg
   :ensure t
   :mode (("\\.ocamlinit\\'" . tuareg-mode)))
@@ -112,6 +92,7 @@
   :config
   (flycheck-ocaml-setup))
 
+
 (use-package idomenu
   :ensure t
   :config
@@ -119,7 +100,23 @@
   (setq ido-everywhere t))
 (ido-mode 1)
 
-;; Global Key Settings
-(global-set-key (kbd "C-c") nil) ;; TODO: remove me if you notice any weird behaviour related to Ctrl
-(global-set-key (kbd "C-x f") 'ido-find-file)
 
+;; better Vim-like undo
+(use-package undo-tree
+  :config
+  (undo-tree-mode 1))
+(define-key evil-normal-state-map (kbd "u") 'undo-tree-undo)
+(define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(idomenu flycheck-ocaml merlin-eldoc merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
