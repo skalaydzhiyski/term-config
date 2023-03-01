@@ -37,6 +37,7 @@
 
 ;; ------------------- REQURE PACKAGES -------------------------
 
+(setq column-number-mode t)
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode t)
@@ -178,3 +179,5 @@
 (global-set-key [f8] 'save_and_exit_evil_mode)
 (global-set-key [f9] 'load_main_to_utop)
 
+(add-to-list 'load-path "/Users/darchitect/.opam/default/share/emacs/site-lisp")
+(require 'ocp-indent)
