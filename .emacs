@@ -57,7 +57,7 @@
     (evil-end-of-line)    ; to end of line (including newline)
     (evil-backward-char)  ; back to second to last visible character (weird)
     (evil-forward-char))) ; forward to last visible character
-(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+;;(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 ;; Global Key Settings
 (global-set-key (kbd "C-c") nil) ;; TODO: remove me if you notice any weird behaviour related to Ctrl
 (global-set-key (kbd "C-x f") 'ido-find-file)
@@ -150,6 +150,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-minimum-prefix-length 100)
+ '(eldoc-idle-delay 0.3)
  '(package-selected-packages
    '(yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
@@ -181,3 +183,8 @@
 
 (add-to-list 'load-path "/Users/darchitect/.opam/default/share/emacs/site-lisp")
 (require 'ocp-indent)
+
+;; comment out both of these if you want more modern autocomplete on every char instead of TAB
+(global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
+(let ((map company-active-map))
+     (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
