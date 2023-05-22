@@ -151,7 +151,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 100)
- '(eldoc-idle-delay 0.3)
+ '(eldoc-idle-delay 0.5)
  '(package-selected-packages
    '(yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
