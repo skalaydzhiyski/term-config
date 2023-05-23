@@ -188,3 +188,6 @@
 (global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
 (let ((map company-active-map))
      (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
+
+(add-hook 'write-file-hooks 'delete-trailing-whitespace nil t)
+
