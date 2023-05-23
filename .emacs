@@ -189,5 +189,8 @@
 (let ((map company-active-map))
      (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
 
-(add-hook 'write-file-hooks 'delete-trailing-whitespace nil t)
-
+;; clean whitespace when saving except fundamental mode
+(add-hook 'before-save-hook
+	(lambda ()
+		(unless (eq major-mode 'fundamental-mode)
+			(delete-trailing-whitespace))))
