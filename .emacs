@@ -117,9 +117,9 @@
 ;;  (setq merlin-error-after-save nil)
 ;;  (setq merlin-command "<PREFIX>/bin/ocamlmerlin"))
 
-;;(use-package merlin-eldoc
-;;  :ensure t
-;;  :hook ((tuareg-mode) . merlin-eldoc-setup))
+(use-package merlin-eldoc
+  :ensure t
+  :hook ((reason-mode tuareg-mode caml-mode) . merlin-eldoc-setup))
 
 ;; This uses Merlin internally
 (use-package flycheck-ocaml
@@ -153,7 +153,7 @@
  '(company-minimum-prefix-length 100)
  '(eldoc-idle-delay 0.5)
  '(package-selected-packages
-   '(yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+   '(jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -194,3 +194,15 @@
 	(lambda ()
 		(unless (eq major-mode 'fundamental-mode)
 			(delete-trailing-whitespace))))
+
+(add-to-list 'default-frame-alist '(background-color . "gray8"))
+
+;; setup python stuff
+(add-hook 'python-mode-hook
+      (lambda ()
+        (setq indent-tabs-mode t)
+        (setq tab-width 4)
+        (setq python-indent-offset 4)))
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)       
