@@ -204,5 +204,17 @@
         (setq tab-width 4)
         (setq python-indent-offset 4)))
 
+(defun my-python-mode-action ()
+  (make-local-variable 'before-save-hook)
+  (add-hook 'before-save-hook (lambda ()
+                                (save-restriction
+                                  (widen)
+                                  (untabify (point-min) (point-max))))))
+(add-hook 'python-mode-hook 'my-python-mode-action)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)       
+(setq jedi:complete-on-dot t)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; underscore is a word
+(modify-syntax-entry ?_ "w")
