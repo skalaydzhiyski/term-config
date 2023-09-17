@@ -103,8 +103,6 @@ alias pytags='/usr/local/Cellar/ctags/5.8_1/bin/ctags -R --fields=+l --languages
 alias wget='wget --user-agent TryToStopMeFromUsingWgetNow'
 alias python3.9='/usr/local/Cellar/python@3.9/3.9.1_1/Frameworks/Python.framework/Versions/3.9/bin/python3.9'
 alias watch='watch -d -n 1'
-# coding alias
-alias ctags='ctags -R --fields=+l --languages=python --python-kinds=-iv'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
