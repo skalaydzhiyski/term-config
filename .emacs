@@ -155,7 +155,7 @@
  '(company-minimum-prefix-length 100)
  '(eldoc-idle-delay 0.5)
  '(package-selected-packages
-   '(python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+   '(ocamlformat python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -184,7 +184,7 @@
 (global-set-key [f9] 'load_main_to_utop)
 
 (add-to-list 'load-path "/Users/darchitect/.opam/default/share/emacs/site-lisp")
-(require 'ocp-indent)
+;;(require 'ocp-indent)
 
 
 (use-package company
@@ -299,10 +299,15 @@
 (modify-syntax-entry ?_ "w")
 
 ;; fuzzy find
-(global-set-key [f4] 'ido-find-file)
+(global-set-key [f5] 'ido-find-file)
 
-(add-hook 'tuareg-mode-hook
-	  (lambda () (add-hook 'before-save-hook 'ocp-indent-buffer (merlin-mode))))
+;; autoformat on save for OCAML
+(add-hook 'tuareg-mode-hook (lambda ()
+  (add-hook 'before-save-hook #'ocamlformat-before-save)))
 
 ;; prevent creation of ~ files
 (setq make-backup-files nil)
+
+(defun dune-build () "Run `dune build`" (interactive)
+  (shell-command "dune build --root $MLROOT"))
+(global-set-key [f12] 'dune-build)
