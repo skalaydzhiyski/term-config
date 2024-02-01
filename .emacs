@@ -203,12 +203,15 @@
 
 ;; comment out both of these if you want more modern autocomplete on every char instead of TAB
 ;; NOTE! Uncomment below if you want to flip between f7 and tab
-(global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
-(let ((map company-active-map))
-     (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
-;;(global-set-key [f7] 'company-complete-common-or-cycle)
+;;(global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
 ;;(let ((map company-active-map))
-;;     (define-key map [f7] 'company-complete-common-or-cycle))
+;;     (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
+(global-set-key [f7] 'company-complete-selection)
+(let ((map company-active-map))
+     (define-key map [f7] 'company-complete-selection))
+(global-set-key [f6] 'company-complete-common-or-cycle)
+(let ((map company-active-map))
+     (define-key map [f6] 'company-complete-common-or-cycle))
 
 ;; clean whitespace when saving except fundamental mode
 (add-hook 'before-save-hook
@@ -296,7 +299,7 @@
 (modify-syntax-entry ?_ "w")
 
 ;; fuzzy find
-(global-set-key [f12] 'ido-find-file)
+(global-set-key [f4] 'ido-find-file)
 
 (add-hook 'tuareg-mode-hook
 	  (lambda () (add-hook 'before-save-hook 'ocp-indent-buffer (merlin-mode))))
