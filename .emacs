@@ -4,6 +4,8 @@
 (setq package-list '(evil
                      evil-leader))
 
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
+
 ; Add Melpa as the default Emacs Package repository
 ; only contains a very limited number of packages
 (add-to-list 'package-archives
@@ -104,8 +106,8 @@
 ;;  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
 
 ;; Major mode for editing Dune project files
-(use-package dune
-  :ensure t)
+;;(use-package dune
+;;  :ensure t)
 
 ;; Merlin provides advanced IDE features
 ;;(use-package merlin
@@ -117,15 +119,15 @@
 ;;  (setq merlin-error-after-save nil)
 ;;  (setq merlin-command "<PREFIX>/bin/ocamlmerlin"))
 
-(use-package merlin-eldoc
-  :ensure t
-  :hook ((reason-mode tuareg-mode caml-mode) . merlin-eldoc-setup))
+;;(use-package merlin-eldoc
+;;  :ensure t
+;;  :hook ((reason-mode tuareg-mode caml-mode) . merlin-eldoc-setup))
 
 ;; This uses Merlin internally
-(use-package flycheck-ocaml
-  :ensure t
-  :config
-  (flycheck-ocaml-setup))
+;;(use-package flycheck-ocaml
+;;  :ensure t
+;;  :config
+;;  (flycheck-ocaml-setup))
 
 
 (use-package idomenu
@@ -153,7 +155,7 @@
  '(company-minimum-prefix-length 100)
  '(eldoc-idle-delay 0.5)
  '(package-selected-packages
-   '(jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+   '(python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -184,10 +186,29 @@
 (add-to-list 'load-path "/Users/darchitect/.opam/default/share/emacs/site-lisp")
 (require 'ocp-indent)
 
+
+(use-package company
+ :ensure t
+ :config
+ (setq company-idle-delay 0
+       company-minimum-prefix-length 2
+       company-show-numbers t
+       company-tooltip-limit 10
+       company-tooltip-align-annotations t
+       ;; invert the navigation direction if the the completion popup-isearch-match
+       ;; is displayed on top (happens near the bottom of windows)
+       company-tooltip-flip-when-above t)
+ (global-company-mode t)
+ )
+
 ;; comment out both of these if you want more modern autocomplete on every char instead of TAB
+;; NOTE! Uncomment below if you want to flip between f7 and tab
 (global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
 (let ((map company-active-map))
      (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
+;;(global-set-key [f7] 'company-complete-common-or-cycle)
+;;(let ((map company-active-map))
+;;     (define-key map [f7] 'company-complete-common-or-cycle))
 
 ;; clean whitespace when saving except fundamental mode
 (add-hook 'before-save-hook
@@ -196,6 +217,59 @@
 			(delete-trailing-whitespace))))
 
 (add-to-list 'default-frame-alist '(background-color . "gray8"))
+
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  ;;(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+  )
+(use-package company-anaconda
+  :ensure t
+  :init (require 'rx)
+  :after (company)
+  :config
+  (add-to-list 'company-backends 'company-anaconda)
+  )
+(use-package company-quickhelp
+  ;; Quickhelp may incorrectly place tooltip towards end of buffer
+  ;; See: https://github.com/expez/company-quickhelp/issues/72
+  :ensure t
+  :config
+  (company-quickhelp-mode)
+  )
+
+;; Another choice is Jedi, but it is designed to work with
+;; AutoComplete instead of company-mode.  There's jedi-company, but
+;; `jedi:setup` will always setup ac, unless you disable it
+;; explicitly, which is annoying.  Also, you don't get the tool tip.
+
+;; If you really want to try with jedi+company, use below scripts it
+;; (remove the :disabled tag)
+(use-package jedi
+  :disabled
+  :after (epc pos-tip)
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (add-hook 'python-mode-hook 'jedi:ac-setup)
+  :config
+  ;; For setup
+  ;; http://d.hatena.ne.jp/n-channel/20131220/1387551080
+  ;; and this:
+  ;; http://kenbell.hatenablog.com/entry/2017/01/15/112344
+
+  ;; Under windows, process might very long and EPC may fail.
+  ;; Set it larger. What a bummer...
+  ;;(if (memq system-type '(ms-dos windows-nt))
+  ;;(setq epc:accept-process-timeout 1000))
+  )
+(use-package company-jedi
+  :disabled
+  :ensure t
+  :config)
+
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
 
 ;; setup python stuff
 (add-hook 'python-mode-hook
@@ -212,9 +286,20 @@
                                   (untabify (point-min) (point-max))))))
 (add-hook 'python-mode-hook 'my-python-mode-action)
 (add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'company-mode)
+(add-hook 'python-mode-hook 'eglot)
 (setq jedi:complete-on-dot t)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; underscore is a word
 (modify-syntax-entry ?_ "w")
+
+;; fuzzy find
+(global-set-key [f12] 'ido-find-file)
+
+(add-hook 'tuareg-mode-hook
+	  (lambda () (add-hook 'before-save-hook 'ocp-indent-buffer (merlin-mode))))
+
+;; prevent creation of ~ files
+(setq make-backup-files nil)
