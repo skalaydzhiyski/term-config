@@ -308,6 +308,8 @@
 ;; prevent creation of ~ files
 (setq make-backup-files nil)
 
-(defun dune-build () "Run `dune build`" (interactive)
-  (shell-command "dune build --root $MLROOT"))
+(defvar dune_build_and_run_command "dune build; dune exec $(basename $PWD)")
+(defun dune-build () "Run `dune build` and run" (interactive)
+  (save_and_exit_evil_mode)
+  (shell-command (format "tmux send-keys -t bottom '%s;'; tmux send-keys -t bottom Enter" dune_build_and_run_command)))
 (global-set-key [f12] 'dune-build)
