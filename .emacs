@@ -152,7 +152,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-minimum-prefix-length 100)
  '(eldoc-idle-delay 0.5)
  '(package-selected-packages
    '(ocamlformat python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
