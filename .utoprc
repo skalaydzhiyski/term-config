@@ -4,8 +4,13 @@ module.foreground:        x-purple
 comment.foreground:       x-chocolate1
 doc.foreground:           x-light-salmon
 constant.foreground:      x-red
+
 keyword.foreground:       x-orange
 symbol.foreground:        x-orange
+
+!keyword.foreground:       x-dark-goldenrod
+!symbol.foreground:        x-dark-goldenrod
+
 string.foreground:        x-light-salmon
 char.foreground:          x-light-salmon
 quotation.foreground:     x-purple
