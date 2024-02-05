@@ -313,3 +313,11 @@
   (save_and_exit_evil_mode)
   (shell-command (format "tmux send-keys -t bottom '%s;'; tmux send-keys -t bottom Enter" dune_build_and_run_command)))
 (global-set-key [f12] 'dune-build)
+
+;; close error messages in the pane below
+(defun close-split-below ()
+  "Close the split pane below the current one."
+  (interactive)
+  (evil-window-down nil)
+  (evil-window-delete))
+(global-set-key [f4] 'close-split-below)
