@@ -152,9 +152,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-minimum-prefix-length 100)
  '(eldoc-idle-delay 0.5)
  '(package-selected-packages
-   '(ocamlformat python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader)))
+   '(ocamlformat python-black fzf json-mode eglot company-quickhelp company-anaconda anaconda-mode company-jedi jedi python-mode markdown-mode yaml yaml-mode haskell-tab-indent haskell-mode tmux-pane merlin-eldoc company idomenu flycheck-ocaml merlin dune tuareg cmake-mode use-package undo-tree nlinum evil-leader))
+ '(warning-suppress-log-types '((use-package)))
+ '(warning-suppress-types '((use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -205,12 +208,14 @@
 ;;(global-set-key (kbd "TAB") 'company-complete-common-or-cycle)
 ;;(let ((map company-active-map))
 ;;     (define-key map (kbd "TAB") 'company-complete-common-or-cycle))
-(global-set-key [f7] 'company-complete-selection)
-(let ((map company-active-map))
-     (define-key map [f7] 'company-complete-selection))
-(global-set-key [f6] 'company-complete-common-or-cycle)
-(let ((map company-active-map))
-     (define-key map [f6] 'company-complete-common-or-cycle))
+;;(global-set-key [f7] 'company-complete-selection)
+;;(let ((map company-active-map))
+;;     (define-key map [f7] 'company-complete-selection))
+;;(global-set-key [f6] 'company-complete-common-or-cycle)
+;;(let ((map company-active-map))
+;;     (define-key map [f6] 'company-complete-common-or-cycle))
+;;(define-key company-active-map (kbd "RET") nil)
+;;(define-key company-active-map [return] nil)
 
 ;; clean whitespace when saving except fundamental mode
 (add-hook 'before-save-hook
@@ -307,16 +312,19 @@
 ;; prevent creation of ~ files
 (setq make-backup-files nil)
 
-(defvar dune_build_and_run_command "dune build; dune exec $(basename $PWD)")
+(defvar dune_build_and_run_command "clear; dune build; dune exec $(basename $PWD)")
 (defun dune-build () "Run `dune build` and run" (interactive)
   (save_and_exit_evil_mode)
   (shell-command (format "tmux send-keys -t bottom '%s;'; tmux send-keys -t bottom Enter" dune_build_and_run_command)))
 (global-set-key [f12] 'dune-build)
 
-;; close error messages in the pane below
-(defun close-split-below ()
-  "Close the split pane below the current one."
-  (interactive)
-  (evil-window-down nil)
-  (evil-window-delete))
-(global-set-key [f4] 'close-split-below)
+;; copilot setup
+(use-package copilot
+  :straight (:host github :repo "copilot-emacs/copilot.el" :files ("dist" "*.el"))
+  :ensure t)
+(add-hook 'prog-mode-hook 'copilot-mode)
+(global-set-key [f6] 'copilot-next-completion)
+(global-set-key [f7] 'copilot-accept-completion)
+
+;; terraform stuff
+(setq terraform-format-on-save 1)

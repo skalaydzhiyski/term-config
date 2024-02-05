@@ -1,0 +1,44 @@
+colors:
+  bright:
+    black: '#686868'
+    blue: '#5454ff'
+    cyan: '#54ffff'
+    green: '#54ff54'
+    magenta: '#ff54ff'
+    red: '#ff5454'
+    white: '#ffffff'
+    yellow: '#ffff54'
+  cursor:
+    cursor: '#f8f8f2'
+    text: '#191622'
+  dim:
+    black: '#000000'
+    blue: '#1818b2'
+    cyan: '#18b2b2'
+    green: '#18b218'
+    magenta: '#b218b2'
+    red: '#b21818'
+    white: '#b2b2b2'
+    yellow: '#b26818'
+  normal:
+    black: '#000000'
+    blue: '#1818b2'
+    cyan: '#18b2b2'
+    green: '#18b218'
+    magenta: '#b218b2'
+    red: '#b21818'
+    white: '#b2b2b2'
+    yellow: '#b26818'
+  primary:
+    background: '#1f1f1f'
+    bright_foreground: '#ffffff'
+    foreground: '#e3e3e3'
+  search:
+    focused_match: !!python/object/new:toml.decoder.DynamicInlineTableDict
+      dictitems:
+        background: CellForeground
+        foreground: CellBackground
+    matches: !!python/object/new:toml.decoder.DynamicInlineTableDict
+      dictitems:
+        background: '#b26818'
+        foreground: '#b2b2b2'
