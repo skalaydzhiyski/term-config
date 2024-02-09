@@ -40,30 +40,27 @@ cursor:
   blink_interval: 800
 
 colors:
-  bright:
-    black: '#000000'
-    blue: '#007ACC'
-    cyan: '#00AACB'
-    green: '#60CB00'
-    magenta: '#E64CE6'
-    red: '#F05050'
-    white: '#FFFFFF'
-    yellow: '#FFBC5D'
-  cursor:
-    cursor: '#434343'
-    text: '#F7F7F7'
-  normal:
-    black: '#000000'
-    blue: '#000000'
-    cyan: '#0083B2'
-    green: '#448C27'
-    magenta: '#7A3E9D'
-    red: '#AA3731'
-    white: '#BBBBBB'
-    yellow: '#CB9000'
   primary:
-    background: '#ffffff'
-    foreground: '#000000'
+    background: '0x000000'
+    foreground: '0xffffff'
+  normal:
+    black:      '0x0c0c0c'
+    red:        '0xc75b4e'
+    green:      '0x44a805'
+    yellow:     '0xc1ae00'
+    blue:       '0x9a8cff'
+    magenta:    '0xa837b8'
+    cyan:       '0x00BBBB'
+    white:      '0xcccccc'
+  bright:
+    black:      '0x767676'
+    red:        '0xe74856'
+    green:      '0x16c60c'
+    yellow:     '0xf9f1a5'
+    blue:       '0xcaa4fc'
+    magenta:    '0xb4009e'
+    cyan:       '0x61d6d6'
+    white:      '0xf2f2f2'
 
 key_bindings:
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
