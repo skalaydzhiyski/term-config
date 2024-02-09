@@ -15,6 +15,7 @@ window:
 
 scrolling:
   history: 10000
+
 font:
   normal:
     family: Monaco
