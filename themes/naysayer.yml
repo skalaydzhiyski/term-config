@@ -1,6 +1,6 @@
 colors:
   cursor:
-    cursor: '0xffffff'
+    cursor: '0xe1ffcc'
   bright:
     black: '0x767676'
     blue: '0xcaa4fc'
