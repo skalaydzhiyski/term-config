@@ -1,1 +1,1 @@
-defaults write -g AppleFontSmoothing -int 0
+defaults write org.alacritty AppleFontSmoothing -int 0
