@@ -62,6 +62,11 @@ x = 1
 y = -2
 
 [[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
 chars = "\u001Ba"
 key = "A"
 mods = "Alt"

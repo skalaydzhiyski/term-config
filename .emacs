@@ -129,7 +129,6 @@
 ;;  :config
 ;;  (flycheck-ocaml-setup))
 
-
 (use-package idomenu
   :ensure t
   :config
@@ -193,12 +192,24 @@
        company-minimum-prefix-length 2
        company-show-numbers t
        company-tooltip-limit 10
+       company-tooltip-maximum-width 80
        company-tooltip-align-annotations t
        ;; invert the navigation direction if the the completion popup-isearch-match
        ;; is displayed on top (happens near the bottom of windows)
        company-tooltip-flip-when-above t)
  (global-company-mode t)
  )
+
+;; setup C++ development
+(add-hook 'c++-mode-hook 'company-mode)
+(add-to-list 'company-clang-arguments '"-I/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include")
+(add-to-list 'company-clang-arguments '"-I/usr/x86_64-w64-mingw32/include")
+(add-to-list 'company-clang-arguments '"-I/home/darchitect/wine-bottles/sierra-chart/drive_c/SierraChart/ACS_Source")
+
+(require 'lsp-mode)
+(add-hook 'c++-mode-hook 'lsp)
+(setq lsp-clients-clangd-executable "/usr/bin/clangd")  ; Adjust the path if needed
+
 
 ;; comment out both of these if you want more modern autocomplete on every char instead of TAB
 ;; NOTE! Uncomment below if you want to flip between f7 and tab
