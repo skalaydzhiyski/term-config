@@ -94,6 +94,11 @@
     (modify-syntax-entry ?_ "w" table)
     (with-syntax-table table
       ad-do-it)))
+(defadvice evil-search-word-backward (around underscore-as-word7 activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
 
 (evil-ex-define-cmd "W" #'evil-write)
 (evil-ex-define-cmd "Q" #'evil-quit)
@@ -209,6 +214,10 @@
 (require 'lsp-mode)
 (add-hook 'c++-mode-hook 'lsp)
 (setq lsp-clients-clangd-executable "/usr/bin/clangd")  ; Adjust the path if needed
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'clang-format-buffer nil t)))
 
 
 ;; comment out both of these if you want more modern autocomplete on every char instead of TAB
